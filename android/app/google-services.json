@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "406701637005",
+    "project_id": "retro-chef-c3026",
+    "storage_bucket": "retro-chef-c3026.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:406701637005:android:86fa7a4a8ad10d8b7d91c4",
+        "android_client_info": {
+          "package_name": "com.example.retro_chef"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzRoiodEpXsUuObqiTgcVgWYhivzpDgkY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
