@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 ValueNotifier<AuthService> authService = ValueNotifier(AuthService());
 
-class AuthService extends ChangeNotifier {
+class AuthService{
   final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
 
   User? get currenUser => firebaseAuth.currentUser;
@@ -32,7 +32,6 @@ class AuthService extends ChangeNotifier {
 
   Future<void> signOut() async {
     await firebaseAuth.signOut();
-    authService.notifyListeners();
   }
 
   Future<void> resetPassword({required String email}) async {

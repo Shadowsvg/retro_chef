@@ -4,9 +4,14 @@ import 'package:retro_chef/pages/home_page.dart';
 import 'package:retro_chef/pages/loading.dart';
 import 'package:retro_chef/pages/welcome_page.dart';
 
-class AuthLayout extends StatelessWidget {
+class AuthLayout extends StatefulWidget {
   const AuthLayout({super.key});
 
+  @override
+  State<AuthLayout> createState() => _AuthLayoutState();
+}
+
+class _AuthLayoutState extends State<AuthLayout> {
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder(
@@ -15,15 +20,13 @@ class AuthLayout extends StatelessWidget {
         return StreamBuilder(
           stream: value.authStateChanges,
           builder: (context, snapshot) {
-            Widget widget;
             if (snapshot.connectionState == ConnectionState.waiting) {
-              widget = LoadingWidget();
+              return LoadingWidget();
+            } else if (snapshot.hasData) {
+              return HomePage();
+            } else {
+              return WelcomePage();
             }
-            if (snapshot.hasData) {
-              widget = HomePage();
-            }
-            widget = WelcomePage();
-            return widget;
           },
         );
       },

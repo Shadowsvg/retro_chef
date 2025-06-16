@@ -1,13 +1,24 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:retro_chef/auth_service.dart';
+import 'package:retro_chef/pages/welcome_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
-  Future<void> logout() async {
+  Future<void> logout(BuildContext context) async {
     try {
       await authService.value.signOut();
+      if (context.mounted) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return WelcomePage();
+            },
+          ),
+        );
+      }
     } on FirebaseAuthException catch (e) {
       print('Exception while logout : $e');
     }
@@ -62,7 +73,7 @@ class HomePage extends StatelessWidget {
               title: Text('Logout', style: TextStyle(color: Colors.red)),
               onTap: () async {
                 Navigator.pop(context);
-                await logout();
+                await logout(context);
               },
             ),
           ],
@@ -72,11 +83,7 @@ class HomePage extends StatelessWidget {
         child: Text(
           'You are logged in successfully',
           textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 48,
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
-          ),
+          style: Theme.of(context).textTheme.headlineLarge,
         ),
       ),
     );

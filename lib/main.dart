@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:retro_chef/auth_layout.dart';
+import 'package:retro_chef/pages/splash.dart';
+import 'package:retro_chef/theme/retro_theme.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -16,11 +17,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
-      home: const AuthLayout(),
+      title: 'Retro Chef',
+      theme: retroChefTheme,
+      home: const SplashScreen(),
     );
   }
 }
