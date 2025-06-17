@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:retro_chef/theme/retro_colors.dart';
+import 'package:retro_chef/utils/constants/retro_colors.dart';
 import 'package:retro_chef/widgets/gradient_text.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -44,24 +44,21 @@ class _SplashScreenState extends State<SplashScreen> {
                   RetroColors.secondary,
                 ],
               ),
-              style: Theme.of(
-                context,
-              ).textTheme.headlineLarge?.copyWith(fontSize: 40),
-            ),
-            SizedBox(height: 12),
-            Text(
-              'Your AI Cooking Assistant',
               style: Theme.of(context).textTheme.headlineLarge,
             ),
             SizedBox(height: 12),
             Text(
-              'TEST Orbitron Regular 400',
-              style: TextStyle(
-                fontFamily: 'Orbitron',
-                fontWeight: FontWeight.w900, // Regular
-                fontSize: 24,
-                color: Colors.white,
-              ),
+              'Your AI Cooking Assistant',
+              style: Theme.of(
+                context,
+              ).textTheme.bodyMedium?.copyWith(color: RetroColors.secondary),
+            ),
+            SizedBox(height: 40),
+            Text(
+              'v2.5.0',
+              style: Theme.of(
+                context,
+              ).textTheme.labelMedium?.copyWith(color: RetroColors.grayShade),
             ),
           ],
         ),

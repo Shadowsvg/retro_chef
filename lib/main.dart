@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:retro_chef/pages/splash.dart';
-import 'package:retro_chef/theme/retro_theme.dart';
+import 'package:retro_chef/utils/theme/theme.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -18,7 +18,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Retro Chef',
-      theme: retroChefTheme,
+      themeMode: ThemeMode.dark,
+      darkTheme: RetroTheme.darkTheme,
       home: const SplashScreen(),
     );
   }
