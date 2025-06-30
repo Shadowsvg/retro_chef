@@ -19,8 +19,8 @@ class HomePage extends StatelessWidget {
           ),
         );
       }
-    } on FirebaseAuthException catch (e) {
-      print('Exception while logout : $e');
+    } on FirebaseAuthException {
+      // handle exception
     }
   }
 

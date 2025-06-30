@@ -10,12 +10,14 @@ class RetroTextTheme {
       fontSize: 40,
       fontWeight: FontWeight.bold,
       color: RetroColors.white,
+      letterSpacing: 2,
     ),
-    // headlineMedium: TextStyle().copyWith(
-    //   fontSize: 36,
-    //   fontWeight: FontWeight.w700,
-    //   color: RetroColors.white,
-    // ),
+    headlineMedium: TextStyle().copyWith(
+      fontSize: 36,
+      fontWeight: FontWeight.w700,
+      color: RetroColors.white,
+      letterSpacing: 2,
+    ),
     // headlineSmall: TextStyle().copyWith(
     //   fontSize: 32,
     //   fontWeight: FontWeight.w500,
@@ -27,16 +29,19 @@ class RetroTextTheme {
       fontSize: 28,
       fontWeight: FontWeight.bold,
       color: RetroColors.white,
+      letterSpacing: 2,
     ),
     titleMedium: TextStyle().copyWith(
       fontSize: 24,
       fontWeight: FontWeight.w700,
       color: RetroColors.white,
+      letterSpacing: 2,
     ),
     titleSmall: TextStyle().copyWith(
       fontSize: 20,
       fontWeight: FontWeight.w500,
       color: RetroColors.white,
+      letterSpacing: 2,
     ),
 
     // detailed descriptive text
@@ -48,24 +53,28 @@ class RetroTextTheme {
     bodyMedium: TextStyle().copyWith(
       fontSize: 16,
       fontWeight: FontWeight.w600,
-      color: RetroColors.white,
+      color: RetroColors.secondary,
+      letterSpacing: 2,
     ),
-    // bodySmall: TextStyle().copyWith(
-    //   fontSize: 24,
-    //   fontWeight: FontWeight.w500,
-    //   color: RetroColors.white,
-    // ),
+    bodySmall: TextStyle().copyWith(
+      fontSize: 14,
+      fontWeight: FontWeight.w500,
+      color: RetroColors.white,
+      letterSpacing: 2,
+    ),
 
     // short or helper text like buttons, tabs, chips.
-    // labelLarge: TextStyle().copyWith(
-    //   fontSize: 32,
-    //   fontWeight: FontWeight.bold,
-    //   color: RetroColors.white,
-    // ),
+    labelLarge: TextStyle().copyWith(
+      fontSize: 16,
+      fontWeight: FontWeight.w900,
+      color: RetroColors.white,
+      letterSpacing: 2,
+    ),
     labelMedium: TextStyle().copyWith(
       fontSize: 12,
       fontWeight: FontWeight.normal,
       color: RetroColors.white,
+      letterSpacing: 2,
     ),
     // labelSmall: TextStyle().copyWith(
     //   fontSize: 24,

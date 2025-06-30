@@ -35,18 +35,5 @@ class RetroTheme {
       style: TextButton.styleFrom(foregroundColor: RetroColors.secondary),
     ),
     textTheme: RetroTextTheme.darkTextTheme,
-    inputDecorationTheme: InputDecorationTheme(
-      filled: true,
-      fillColor: RetroColors.suggestionBox,
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(12),
-        borderSide: const BorderSide(color: RetroColors.secondary),
-      ),
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(12),
-        borderSide: const BorderSide(color: RetroColors.accentEnd),
-      ),
-      hintStyle: const TextStyle(color: Colors.white70),
-    ),
   );
 }
