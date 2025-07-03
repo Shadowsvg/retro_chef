@@ -4,7 +4,13 @@ import 'package:retro_chef/utils/constants/retro_colors.dart';
 class GradientButton extends StatelessWidget {
   final String label;
   final VoidCallback onTap;
-  const GradientButton({super.key, required this.label, required this.onTap});
+  final TextStyle? labelStyle;
+  const GradientButton({
+    super.key,
+    required this.label,
+    required this.onTap,
+    this.labelStyle,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +25,14 @@ class GradientButton extends StatelessWidget {
           ),
         ),
         child: Center(
-          child: Text(label, style: Theme.of(context).textTheme.labelLarge),
+          child: Text(
+            label,
+            style:
+                labelStyle ??
+                Theme.of(
+                  context,
+                ).textTheme.labelMedium?.copyWith(fontWeight: FontWeight.bold),
+          ),
         ),
       ),
     );

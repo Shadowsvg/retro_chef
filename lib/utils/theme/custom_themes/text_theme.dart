@@ -45,11 +45,12 @@ class RetroTextTheme {
     ),
 
     // detailed descriptive text
-    // bodyLarge: TextStyle().copyWith(
-    //   fontSize: 32,
-    //   fontWeight: FontWeight.bold,
-    //   color: RetroColors.white,
-    // ),
+
+    bodyLarge: TextStyle().copyWith(
+      fontSize: 20,
+      fontWeight: FontWeight.normal,
+      color: RetroColors.white,
+    ),
     bodyMedium: TextStyle().copyWith(
       fontSize: 16,
       fontWeight: FontWeight.w600,

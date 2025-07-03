@@ -4,9 +4,6 @@ import 'package:retro_chef/pages/splash.dart';
 import 'package:retro_chef/utils/theme/theme.dart';
 import 'firebase_options.dart';
 
-
-// API KEY = AIzaSyDJJR_RtACpdFdB9tXY4pGqz-6C0O75ecI
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);

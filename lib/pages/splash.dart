@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:retro_chef/pages/registration_page.dart';
+import 'package:retro_chef/utils/constants/app_constants.dart';
 import 'package:retro_chef/utils/constants/retro_colors.dart';
 import 'package:retro_chef/utils/widgets/gradient_text.dart';
 
@@ -37,14 +38,8 @@ class _SplashScreenState extends State<SplashScreen> {
           children: [
             Image.asset('assets/images/retro_chef_logo.png', width: 200),
             GradientText(
-              text: 'RETRO CHEF',
-              gradient: LinearGradient(
-                colors: [
-                  RetroColors.accentStart,
-                  RetroColors.highlight,
-                  RetroColors.secondary,
-                ],
-              ),
+              text: AppConstants.appTitle,
+              gradient: AppConstants.titleGradient,
               style: Theme.of(context).textTheme.headlineLarge,
             ),
             SizedBox(height: 12),
