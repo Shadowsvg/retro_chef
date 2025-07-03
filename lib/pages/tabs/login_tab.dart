@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:retro_chef/pages/home_page.dart';
 import 'package:retro_chef/utils/constants/retro_colors.dart';
 import 'package:retro_chef/utils/widgets/gradient_button.dart';
 import 'package:retro_chef/utils/widgets/retro_textfiled.dart';
@@ -40,7 +41,11 @@ class _LoginTabState extends State<LoginTab> with TickerProviderStateMixin {
           GradientButton(
             label: 'Login',
             onTap: () {
-              showAnimatedTopSnackBar(context, 'I am batman');
+              // showAnimatedTopSnackBar(context, 'I am batman');
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => HomePage()),
+              );
             },
           ),
           SizedBox(height: 20),

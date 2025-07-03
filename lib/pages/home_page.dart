@@ -1,10 +1,27 @@
+import 'package:firebase_ai/firebase_ai.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:retro_chef/auth_service.dart';
 import 'package:retro_chef/pages/welcome_page.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  late GenerativeModel aiModel;
+  late TextEditingController promptController;
+  String apiRsponse = '';
+  @override
+  void initState() {
+    super.initState();
+    promptController = TextEditingController();
+
+    aiModel = FirebaseAI.googleAI().generativeModel(model: 'gemini-2.5-flash');
+  }
 
   Future<void> logout(BuildContext context) async {
     try {
@@ -29,7 +46,14 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text('Home Page')),
       bottomNavigationBar: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () async {
+          // Provide a prompt that contains text
+          final prompt = [Content.text(promptController.text)];
+          final response = await aiModel.generateContent(prompt);
+          setState(() {
+            apiRsponse = response.text ?? 'Something went wrong';
+          });
+        },
         child: const Text('This is home page'),
       ),
       drawer: Drawer(
@@ -79,11 +103,13 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
-      body: Center(
-        child: Text(
-          'You are logged in successfully',
-          textAlign: TextAlign.center,
-          style: Theme.of(context).textTheme.headlineLarge,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            TextField(controller: promptController),
+            SizedBox(height: 40),
+            Text(apiRsponse, style: TextStyle(color: Colors.white)),
+          ],
         ),
       ),
     );
