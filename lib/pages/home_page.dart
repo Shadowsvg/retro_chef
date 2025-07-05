@@ -81,13 +81,7 @@ class _HomePageState extends State<HomePage> {
             mainAxisSize: MainAxisSize.min,
             children: [
               SizedBox(height: 12),
-              ClipRRect(
-                borderRadius: BorderRadiusGeometry.circular(8),
-                child: Container(
-                  color: RetroColors.secondary,
-                  child: SvgPicture.asset('assets/images/chef.svg'),
-                ),
-              ),
+              _chefImage(),
               SizedBox(height: 16),
               _welcomeContainer(),
               SizedBox(height: 24),
@@ -99,6 +93,16 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _chefImage() {
+    return ClipRRect(
+      borderRadius: BorderRadiusGeometry.circular(8),
+      child: Container(
+        color: RetroColors.secondary,
+        child: SvgPicture.asset('assets/images/chef.svg'),
       ),
     );
   }
