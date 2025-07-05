@@ -45,7 +45,6 @@ class RetroTextTheme {
     ),
 
     // detailed descriptive text
-
     bodyLarge: TextStyle().copyWith(
       fontSize: 20,
       fontWeight: FontWeight.normal,
@@ -77,10 +76,10 @@ class RetroTextTheme {
       color: RetroColors.white,
       letterSpacing: 2,
     ),
-    // labelSmall: TextStyle().copyWith(
-    //   fontSize: 24,
-    //   fontWeight: FontWeight.w500,
-    //   color: RetroColors.white,
-    // ),
+    labelSmall: TextStyle().copyWith(
+      fontSize: 10,
+      fontWeight: FontWeight.normal,
+      color: RetroColors.white,
+    ),
   );
 }

@@ -38,7 +38,7 @@ class _SplashScreenState extends State<SplashScreen> {
           children: [
             Image.asset('assets/images/retro_chef_logo.png', width: 200),
             GradientText(
-              text: AppConstants.appTitle,
+              text: AppConstants.appTitle.toUpperCase(),
               gradient: AppConstants.titleGradient,
               style: Theme.of(context).textTheme.headlineLarge,
             ),

@@ -9,7 +9,11 @@ import 'package:retro_chef/utils/constants/retro_colors.dart';
 import 'package:retro_chef/utils/widgets/generate_recipe_textfield.dart';
 import 'package:retro_chef/utils/widgets/gradient_button.dart';
 import 'package:retro_chef/utils/widgets/gradient_text.dart';
+import 'package:retro_chef/utils/widgets/recent_recipe_widget.dart';
 import 'package:retro_chef/utils/widgets/retro_container.dart';
+import 'package:retro_chef/utils/widgets/section_title_widget.dart';
+import 'package:retro_chef/utils/widgets/suggested_prompts_widget.dart';
+import 'package:retro_chef/utils/widgets/typewriter_widget.dart';
 import 'package:retro_chef/utils/widgets/user_profile_icon.dart';
 
 class HomePage extends StatefulWidget {
@@ -22,6 +26,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   late GenerativeModel aiModel;
   late TextEditingController promptController;
+
   String apiRsponse = '';
   @override
   void initState() {
@@ -55,7 +60,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: RetroColors.textFieldBackground,
         title: GradientText(
-          text: AppConstants.appTitle,
+          text: AppConstants.appTitle.toUpperCase(),
           gradient: AppConstants.titleGradient,
           style: Theme.of(context).textTheme.bodyMedium,
         ),
@@ -67,21 +72,13 @@ class _HomePageState extends State<HomePage> {
           child: Container(height: 4, color: RetroColors.accentStart),
         ),
       ),
-      // bottomNavigationBar: FloatingActionButton(
-      //   onPressed: () async {
-      //     // Provide a prompt that contains text
-      //     final prompt = [Content.text(promptController.text)];
-      //     final response = await aiModel.generateContent(prompt);
-      //     setState(() {
-      //       apiRsponse = response.text ?? 'Something went wrong';
-      //     });
-      //   },
-      //   child: const Text('This is home page'),
-      // ),
       body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
             children: [
               SizedBox(height: 12),
               ClipRRect(
@@ -95,6 +92,10 @@ class _HomePageState extends State<HomePage> {
               _welcomeContainer(),
               SizedBox(height: 24),
               _generateRecipeContainer(),
+              SizedBox(height: 24),
+              _suggestedPrompts(),
+              SizedBox(height: 24),
+              _recentRecipe(),
             ],
           ),
         ),
@@ -107,10 +108,12 @@ class _HomePageState extends State<HomePage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          GradientText(
-            text: AppConstants.welcomeTitle,
+          TypewriterWidget(
+            text: AppConstants.welcomeTitle.toUpperCase(),
+            style: Theme.of(
+              context,
+            ).textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold),
             gradient: AppConstants.titleGradient,
-            style: Theme.of(context).textTheme.bodyMedium,
           ),
           SizedBox(height: 16),
           Text(
@@ -131,9 +134,56 @@ class _HomePageState extends State<HomePage> {
         children: [
           GenerateRecipeTextfield(),
           SizedBox(height: 8),
-          GradientButton(label: AppConstants.generateRecipe, onTap: () {}),
+          GradientButton(
+            label: AppConstants.generateRecipe.toUpperCase(),
+            onTap: () {},
+          ),
         ],
       ),
+    );
+  }
+
+  Widget _suggestedPrompts() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SectionTitleWidget(title: AppConstants.suggestedPrompts),
+        SizedBox(height: 20),
+        Wrap(
+          spacing: 10,
+          runSpacing: 10,
+          children: List.generate(
+            AppConstants.suggestedPromptsCount,
+            (index) => SizedBox(
+              width: (MediaQuery.of(context).size.width - 26) / 2,
+              child: SuggestedPromptsWidget(
+                prompt: AppConstants.listOfPrompts[index],
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _recentRecipe() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SectionTitleWidget(title: AppConstants.recentRecipe),
+        SizedBox(height: 20),
+        ...List.generate(
+          AppConstants.recentRecipeCount,
+          (index) => Padding(
+            padding: EdgeInsets.only(bottom: 10),
+            child: RecentRecipeWidget(
+              recentRecipeTitle: 'Spicy Chicken stir fry',
+              minutes: 25,
+              difficulty: RecipeDifficulty.easy,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

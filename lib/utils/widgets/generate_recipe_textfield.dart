@@ -21,7 +21,7 @@ class _GenerateRecipeTextfieldState extends State<GenerateRecipeTextfield> {
       cursorHeight: 16,
       decoration: InputDecoration(
         prefixIcon: Icon(
-          FontAwesomeIcons.greaterThan,
+          FontAwesomeIcons.angleRight,
           size: 12,
           color: RetroColors.accentStart,
         ),
@@ -34,7 +34,7 @@ class _GenerateRecipeTextfieldState extends State<GenerateRecipeTextfield> {
         hint: Padding(
           padding: const EdgeInsets.only(left: 12),
           child: Text(
-            AppConstants.insertIngredientsText,
+            AppConstants.insertIngredientsText.toUpperCase(),
             style: Theme.of(
               context,
             ).textTheme.labelMedium?.copyWith(color: RetroColors.grayShade),
