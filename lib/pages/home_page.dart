@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:retro_chef/auth_service.dart';
+import 'package:retro_chef/pages/recipe_page.dart';
 import 'package:retro_chef/pages/welcome_page.dart';
 import 'package:retro_chef/utils/constants/app_constants.dart';
 import 'package:retro_chef/utils/constants/retro_colors.dart';
@@ -90,6 +91,7 @@ class _HomePageState extends State<HomePage> {
               _suggestedPrompts(),
               SizedBox(height: 24),
               _recentRecipe(),
+              SizedBox(height: 24),
             ],
           ),
         ),
@@ -140,7 +142,16 @@ class _HomePageState extends State<HomePage> {
           SizedBox(height: 8),
           GradientButton(
             label: AppConstants.generateRecipe.toUpperCase(),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return RecipePage();
+                  },
+                ),
+              );
+            },
           ),
         ],
       ),

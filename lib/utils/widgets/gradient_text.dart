@@ -19,7 +19,7 @@ class GradientText extends StatelessWidget {
         return gradient.createShader(bounds);
       },
       blendMode: BlendMode.srcIn,
-      child: Text(text, style: style),
+      child: Text(text, style: style, textAlign: TextAlign.center),
     );
   }
 }

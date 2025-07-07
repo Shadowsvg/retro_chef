@@ -14,6 +14,9 @@ class AppConstants {
   static const String easy = 'Easy';
   static const String medium = 'Medium';
   static const String hard = 'Hard';
+  static const String back = 'Back';
+  static const String recipeName = 'Spicy Mushroom Risotto';
+  static const String servings = 'Servings';
 
   static const int suggestedPromptsCount = 4;
   static const int recentRecipeCount = 3;
