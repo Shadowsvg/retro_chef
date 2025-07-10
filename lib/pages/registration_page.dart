@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:retro_chef/pages/tabs/login_tab.dart';
 import 'package:retro_chef/pages/tabs/register_tab.dart';
+import 'package:retro_chef/utils/constants/app_constants.dart';
 import 'package:retro_chef/utils/constants/retro_colors.dart';
 import 'package:retro_chef/utils/widgets/gradient_text.dart';
+import 'package:retro_chef/utils/widgets/buttons/retro_icon_button.dart';
+import 'package:retro_chef/utils/widgets/retro_container.dart';
 
 class RegistrationPage extends StatefulWidget {
   const RegistrationPage({super.key});
@@ -63,24 +66,14 @@ class _RegistrationPageState extends State<RegistrationPage>
               mainAxisSize: MainAxisSize.min,
               children: [
                 GradientText(
-                  text: 'RETRO CHEF',
-                  gradient: LinearGradient(
-                    colors: [
-                      RetroColors.accentStart,
-                      RetroColors.highlight,
-                      RetroColors.secondary,
-                    ],
-                  ),
+                  text: AppConstants.appTitle.toUpperCase(),
+                  gradient: AppConstants.titleGradient,
                   style: Theme.of(context).textTheme.headlineMedium,
                 ),
                 SizedBox(height: 32),
-                Container(
+                RetroContainer(
+                  borderColor: RetroColors.pinkRed,
                   padding: EdgeInsets.symmetric(horizontal: 16, vertical: 20),
-                  decoration: BoxDecoration(
-                    color: RetroColors.containerBackground,
-                    border: Border.all(color: RetroColors.pinkRed, width: 2),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -102,8 +95,8 @@ class _RegistrationPageState extends State<RegistrationPage>
                           });
                         },
                         tabs: [
-                          Tab(text: 'LOGIN'),
-                          Tab(text: 'REGISTER'),
+                          Tab(text: AppConstants.login.toUpperCase()),
+                          Tab(text: AppConstants.register.toUpperCase()),
                         ],
                       ),
                       SizedBox(height: 20),
@@ -116,29 +109,16 @@ class _RegistrationPageState extends State<RegistrationPage>
                 ),
                 SizedBox(height: 20),
                 Text(
-                  'OR CONTINUE WITH',
+                  AppConstants.orContinueWith,
                   style: Theme.of(context).textTheme.labelMedium?.copyWith(
                     color: RetroColors.grayShade,
                   ),
                 ),
                 SizedBox(height: 20),
-                GestureDetector(
+                RetroIconButton(
+                  icon: FontAwesomeIcons.google,
                   onTap: () {},
-                  child: Container(
-                    padding: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      color: RetroColors.textFieldBackground,
-                      border: Border.all(
-                        color: RetroColors.secondary,
-                        width: 2,
-                      ),
-                      borderRadius: BorderRadius.all(Radius.circular(4)),
-                    ),
-                    child: Icon(
-                      FontAwesomeIcons.google,
-                      color: RetroColors.secondary,
-                    ),
-                  ),
+                  iconColor: RetroColors.secondary,
                 ),
               ],
             ),

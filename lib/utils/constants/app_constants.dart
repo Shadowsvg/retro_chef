@@ -17,6 +17,20 @@ class AppConstants {
   static const String back = 'Back';
   static const String recipeName = 'Spicy Mushroom Risotto';
   static const String servings = 'Servings';
+  static const String login = 'Login';
+  static const String register = 'Register';
+  static const String orContinueWith = 'OR CONTINUE WITH';
+  static const String nutritionInfo = 'Nutrition Info';
+  static const String calories = 'Calories';
+  static const String protein = 'Protein';
+  static const String carbs = 'Carbs';
+  static const String fat = 'Fat';
+  static const String ingredients = 'Ingredients';
+  static const String instructions = 'Instructions';
+  static const String tryAnotherRecipe = 'Try Another Recipe';
+  static const String saveRecipe = 'Save recipe';
+  static const String chefTips = 'Chef tips';
+  static const String proTips = 'Pro tips';
 
   static const int suggestedPromptsCount = 4;
   static const int recentRecipeCount = 3;
@@ -34,6 +48,14 @@ class AppConstants {
     'Quick vegan breakfast',
     'How to make lasagna?',
     'Easy dessert recipes',
+  ];
+
+  static const List<String> listOfSteps = [
+    'Step one',
+    'Step two',
+    'Step three',
+    'Step four',
+    'Step five',
   ];
 }
 

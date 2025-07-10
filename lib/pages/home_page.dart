@@ -8,7 +8,7 @@ import 'package:retro_chef/pages/welcome_page.dart';
 import 'package:retro_chef/utils/constants/app_constants.dart';
 import 'package:retro_chef/utils/constants/retro_colors.dart';
 import 'package:retro_chef/utils/widgets/generate_recipe_textfield.dart';
-import 'package:retro_chef/utils/widgets/gradient_button.dart';
+import 'package:retro_chef/utils/widgets/buttons/gradient_button.dart';
 import 'package:retro_chef/utils/widgets/gradient_text.dart';
 import 'package:retro_chef/utils/widgets/recent_recipe_widget.dart';
 import 'package:retro_chef/utils/widgets/retro_container.dart';
@@ -78,7 +78,6 @@ class _HomePageState extends State<HomePage> {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
               SizedBox(height: 12),

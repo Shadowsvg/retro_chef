@@ -17,6 +17,7 @@ class GradientButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
+        width: MediaQuery.sizeOf(context).width,
         padding: EdgeInsets.symmetric(vertical: 16),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
@@ -24,15 +25,14 @@ class GradientButton extends StatelessWidget {
             colors: [RetroColors.pinkRed, RetroColors.accentEnd],
           ),
         ),
-        child: Center(
-          child: Text(
-            label,
-            style:
-                labelStyle ??
-                Theme.of(
-                  context,
-                ).textTheme.labelMedium?.copyWith(fontWeight: FontWeight.bold),
-          ),
+        child: Text(
+          label,
+          style:
+              labelStyle ??
+              Theme.of(
+                context,
+              ).textTheme.labelMedium?.copyWith(fontWeight: FontWeight.bold),
+          textAlign: TextAlign.center,
         ),
       ),
     );

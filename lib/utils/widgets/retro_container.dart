@@ -26,7 +26,7 @@ class RetroContainer extends StatelessWidget {
       child: Container(
         padding: padding ?? EdgeInsets.all(20),
         decoration: BoxDecoration(
-          color: backgroundColor ?? RetroColors.suggestionBox,
+          color: backgroundColor ?? RetroColors.containerBackground,
           border: Border.all(
             color: borderColor ?? RetroColors.secondary,
             width: 2,
