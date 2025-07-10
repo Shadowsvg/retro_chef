@@ -10,7 +10,7 @@ class SectionTitleWidget extends StatelessWidget {
     return Text(
       '${title.toUpperCase()}:',
       style: Theme.of(context).textTheme.labelMedium?.copyWith(
-        fontWeight: FontWeight.bold,
+        fontWeight: FontWeight.w900,
         color: RetroColors.secondary,
       ),
     );
