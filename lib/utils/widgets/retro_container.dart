@@ -29,7 +29,7 @@ class RetroContainer extends StatelessWidget {
           color: backgroundColor ?? RetroColors.containerBackground,
           border: Border.all(
             color: borderColor ?? RetroColors.secondary,
-            width: 2,
+            width: 1,
           ),
           borderRadius: BorderRadius.circular(borderRadius ?? 8),
         ),

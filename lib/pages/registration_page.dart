@@ -53,12 +53,7 @@ class _RegistrationPageState extends State<RegistrationPage>
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 12),
-        decoration: BoxDecoration(
-          border: Border.symmetric(
-            vertical: BorderSide(color: RetroColors.grayShade, width: 8),
-          ),
-        ),
+        padding: EdgeInsets.symmetric(horizontal: 8),
         child: Center(
           child: SingleChildScrollView(
             child: Column(
